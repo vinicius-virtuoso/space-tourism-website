@@ -13,6 +13,14 @@ const GlobalStyle = createGlobalStyle`
     --ff-serif: "Bellefair", serif;
     --ff-sans-cond: "Barlow Condensed", sans-serif;
     --ff-sans-normal: "Barlow", sans-serif;
+    --ff-color-light: #f5f5f5;
+    --body-color:#000816;
+    --bg-acrylic:rgba(109, 109, 109, 0.2);
+    --ff-color-light-opacity:rgba(245, 245, 245, .7);
+  }
+  body {
+    background: var(--body-color);
+    overflow: hidden; 
   }
 
 `;

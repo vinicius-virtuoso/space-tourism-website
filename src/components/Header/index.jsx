@@ -84,7 +84,7 @@ const Header = () => {
                     </LinkItem>
                   </Item>
                   <Item>
-                    <LinkItem to={"/Crew"}>
+                    <LinkItem to={"/crew"}>
                       <span>02</span> Crew
                     </LinkItem>
                   </Item>

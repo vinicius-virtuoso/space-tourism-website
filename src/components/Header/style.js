@@ -10,6 +10,7 @@ export const HeaderBox = styled(motion.header)`
   background: transparent;
   top: 0;
   left: 0;
+  z-index: 999;
 
   justify-content: space-between;
   align-items: center;
@@ -50,7 +51,7 @@ export const Nav = styled(motion.nav)`
   position: absolute;
   opacity: 0;
   width: 0%;
-  background: rgba(75, 75, 75, 0.2);
+  background: var(--bg-acrylic);
   backdrop-filter: blur(10px);
   top: 0;
   right: 0;
@@ -97,8 +98,8 @@ export const Nav = styled(motion.nav)`
   }
 
   @media (min-width: 1200px) {
-    width: 51%;
-    padding-left: 60px;
+    width: 50%;
+    padding-left: 100px;
     padding-right: 0px;
   }
 `;
@@ -116,6 +117,10 @@ export const List = styled(motion.ul)`
     flex-direction: row;
     justify-content: flex-start;
     height: 100%;
+  }
+
+  @media (min-width: 1200px) {
+    gap: 50px;
   }
 `;
 
@@ -136,7 +141,7 @@ export const LinkItem = styled(NavLink)`
   font-family: var(--ff-sans-cond);
   font-weight: normal;
   font-size: 1.4rem;
-  color: #f0f0f0;
+  color: var(--ff-color-light);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -144,7 +149,7 @@ export const LinkItem = styled(NavLink)`
   white-space: nowrap;
 
   span {
-    color: #ffffff;
+    color: var(--ff-color-light);
     font-weight: bold;
   }
 
@@ -152,7 +157,7 @@ export const LinkItem = styled(NavLink)`
     content: "";
     width: 0;
     display: block;
-    background: #ffffffa9;
+    background: var(--ff-color-light);
     height: 4px;
     transition: 0.3s ease-in-out;
     opacity: 0;
@@ -179,6 +184,17 @@ export const LinkItem = styled(NavLink)`
     &.active:after {
       opacity: 1;
       width: 80px;
+    }
+  }
+  @media (min-width: 1200px) {
+    &:after {
+      width: 0%;
+      position: absolute;
+      bottom: 0;
+    }
+    &.active:after {
+      opacity: 1;
+      width: 100%;
     }
   }
 `;
