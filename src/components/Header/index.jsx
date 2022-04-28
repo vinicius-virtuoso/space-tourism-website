@@ -8,7 +8,7 @@ import {
   Item,
   LinkItem,
 } from "./style";
-import imgLogo from "../../image/logo.svg";
+import imgLogo from "../../image/icons/logo.svg";
 import iconBars from "../../image/icons/icon-bars.svg";
 import iconClose from "../../image/icons/icon-close.svg";
 

@@ -102,6 +102,7 @@ export const SectionHome = styled(Section)`
 `;
 
 export const SectionDestination = styled(Section)`
+  align-items: flex-end;
   background-image: url(${ImgDestinationMobile});
   @media (min-width: 768px) {
     background-image: url(${ImgDestinationTablet});
@@ -236,4 +237,79 @@ export const Button = styled(motion.button)`
     width: 280px;
     height: 280px;
   }
+`;
+
+export const TitleDestiny = styled(Title)`
+  display: flex;
+  color: var(--ff-color-light-opacity);
+  font-size: 1.3rem;
+  gap: 2rem;
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  span {
+    font-family: var(--ff-sans-cond);
+    display: inline-block;
+    color: var(--ff-color-light);
+    font-weight: bold;
+    font-size: 1rem;
+    font-size: 1.3rem;
+  }
+`;
+
+export const Box = styled(motion.div)`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+export const PlanetImg = styled(motion.img)`
+  width: 100%;
+  max-width: 190px;
+  margin: 0 auto;
+`;
+
+export const PlanetList = styled(motion.ul)`
+  display: flex;
+  gap: 30px;
+  padding: 20px 20px 25px 20px;
+`;
+
+export const PlanetItem = styled(motion.li)`
+  font-size: 1rem;
+  color: var(--ff-color-light-opacity);
+  font-family: var(--ff-sans-cond);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+`;
+export const TitlePlanetName = styled(motion.h3)`
+  color: var(--ff-color-light);
+  font-family: var(--ff-serif);
+  font-weight: 300;
+  font-size: 4rem;
+  text-transform: uppercase;
+`;
+export const Separator = styled.div`
+  width: 100%;
+  height: 1px;
+  border-radius: 3px;
+  background-color: var(--ff-color-light-opacity);
+  max-width: 90%;
+  margin: 5px 0;
+`;
+
+export const Distance = styled(Title)`
+  padding: 20px 10px;
+  font-size: 1rem;
+  span {
+    font-size: 1.5rem;
+  }
+`;
+
+export const TextDistance = styled(Text)`
+  line-height: 1.4;
+  height: 130px;
+  font-size: 1rem;
 `;
