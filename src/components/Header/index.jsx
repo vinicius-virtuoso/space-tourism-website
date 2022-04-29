@@ -7,6 +7,7 @@ import {
   List,
   Item,
   LinkItem,
+  ContainerHeader,
 } from "./style";
 import imgLogo from "../../image/icons/logo.svg";
 import iconBars from "../../image/icons/icon-bars.svg";
@@ -14,7 +15,7 @@ import iconClose from "../../image/icons/icon-close.svg";
 
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { Container, Flex, Line } from "../../Styles/styles";
+import { Line } from "../../Styles/styles";
 
 const Header = () => {
   const [mobile, setMobile] = useState(true);
@@ -65,38 +66,35 @@ const Header = () => {
         </HeaderBox>
       ) : (
         <HeaderBox>
-          <Container>
-            <Flex>
-              <Flex w={51}>
-                <Logo src={imgLogo} />
-                <Line />
-              </Flex>
-              <Nav>
-                <List>
-                  <Item>
-                    <LinkItem to={"/"}>
-                      <span>00</span> Home
-                    </LinkItem>
-                  </Item>
-                  <Item>
-                    <LinkItem to={"/destination"}>
-                      <span>01</span> Destination
-                    </LinkItem>
-                  </Item>
-                  <Item>
-                    <LinkItem to={"/crew"}>
-                      <span>02</span> Crew
-                    </LinkItem>
-                  </Item>
-                  <Item>
-                    <LinkItem to={"/technology"}>
-                      <span>03</span> Technology
-                    </LinkItem>
-                  </Item>
-                </List>
-              </Nav>
-            </Flex>
-          </Container>
+          <ContainerHeader>
+            <Logo src={imgLogo} />
+
+            <Line />
+            <Nav>
+              <List>
+                <Item>
+                  <LinkItem to={"/"}>
+                    <span>00</span> Home
+                  </LinkItem>
+                </Item>
+                <Item>
+                  <LinkItem to={"/destination"}>
+                    <span>01</span> Destination
+                  </LinkItem>
+                </Item>
+                <Item>
+                  <LinkItem to={"/crew"}>
+                    <span>02</span> Crew
+                  </LinkItem>
+                </Item>
+                <Item>
+                  <LinkItem to={"/technology"}>
+                    <span>03</span> Technology
+                  </LinkItem>
+                </Item>
+              </List>
+            </Nav>
+          </ContainerHeader>
         </HeaderBox>
       )}
     </>

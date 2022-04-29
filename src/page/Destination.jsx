@@ -10,6 +10,7 @@ import {
   TextDistance,
   Separator,
   Distance,
+  Space,
 } from "../Styles/styles";
 import { BoxFade } from "./../Styles/animates";
 import destination from "../services/data.json";
@@ -22,39 +23,78 @@ import Titan from "../image/destination/image-titan.png";
 
 const Destination = () => {
   const [destiny, setDestiny] = useState(destination.destinations[0]);
-  const [img, setImg] = useState(Moon);
-
-  console.log(destiny);
+  const [planet, setPlanet] = useState(<PlanetImg src={Moon} />);
+  const [active, setActive] = useState({
+    moon: true,
+    mars: false,
+    europa: false,
+    titan: false,
+  });
 
   useEffect(() => {
     if (destiny.name === "Moon") {
-      setImg(Moon);
+      setPlanet(<PlanetImg src={Moon} />);
+      setActive({
+        moon: true,
+        mars: false,
+        Europa: false,
+        titan: false,
+      });
     } else if (destiny.name === "Mars") {
-      setImg(Mars);
+      setPlanet(<PlanetImg src={Mars} />);
+      setActive({
+        moon: false,
+        mars: true,
+        europa: false,
+        titan: false,
+      });
     } else if (destiny.name === "Europa") {
-      setImg(Europa);
+      setPlanet(<PlanetImg src={Europa} />);
+      setActive({
+        moon: false,
+        mars: false,
+        europa: true,
+        titan: false,
+      });
     } else if (destiny.name === "Titan") {
-      setImg(Titan);
+      setPlanet(<PlanetImg src={Titan} />);
+      setActive({
+        moon: false,
+        mars: false,
+        europa: false,
+        titan: true,
+      });
     } else {
-      setImg(Moon);
+      setPlanet(<PlanetImg src={Moon} />);
+      setActive({
+        moon: false,
+        mars: false,
+        europa: false,
+        titan: true,
+      });
     }
   }, [destiny]);
 
+  const handleDestination = (index) => {
+    setDestiny(destination.destinations[index]);
+  };
+
   return (
     <SectionDestination initial="hidden" animate="visible" variants={BoxFade}>
-      <Container>
+      <Container destination>
         <Box>
           <TitleDestiny>
             <span>01</span> Pick your destination
           </TitleDestiny>
-          <PlanetImg src={img} />
+          {planet}
         </Box>
         <Box>
           <PlanetList>
             {destination.destinations.map((dest, index) => (
               <PlanetItem
-                onClick={() => setDestiny(destination.destinations[index])}
+                onClick={() => handleDestination(index)}
                 key={index}
+                active={active[dest.name.toLowerCase()]}
               >
                 {dest.name}
               </PlanetItem>
@@ -63,9 +103,14 @@ const Destination = () => {
           <TitlePlanetName>{destiny.name}</TitlePlanetName>
           <TextDistance>{destiny.description}</TextDistance>
           <Separator />
-          <Distance>
-            avg, distance <span>{destiny.distance}</span>
-          </Distance>
+          <Space>
+            <Distance>
+              avg, distance <span>{destiny.distance}</span>
+            </Distance>
+            <Distance>
+              Est. travel time <span>{destiny.travel}</span>
+            </Distance>
+          </Space>
         </Box>
       </Container>
     </SectionDestination>

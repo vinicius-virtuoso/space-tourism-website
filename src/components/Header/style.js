@@ -21,6 +21,32 @@ export const HeaderBox = styled(motion.header)`
     padding: 0;
     top: 35px;
   }
+
+  @media (min-width: 1120px) {
+    position: fixed;
+    &:before {
+      content: "";
+      width: 55%;
+      height: 100%;
+
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      background: var(--bg-acrylic);
+      backdrop-filter: blur(10px);
+    }
+  }
+`;
+
+export const ContainerHeader = styled.div`
+  width: 100%;
+  max-width: 1240px;
+
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 20px;
 `;
 
 export const Logo = styled(motion.img)`
@@ -34,6 +60,9 @@ export const Logo = styled(motion.img)`
   @media (min-width: 800px) {
     width: 185px;
     object-fit: contain;
+  }
+  @media (min-width: 1120px) {
+    margin-right: 20px;
   }
 `;
 
@@ -98,9 +127,12 @@ export const Nav = styled(motion.nav)`
   }
 
   @media (min-width: 1200px) {
-    width: 50%;
+    width: 100%;
     padding-left: 100px;
     padding-right: 0px;
+    position: initial;
+    background: transparent;
+    backdrop-filter: none;
   }
 `;
 export const List = styled(motion.ul)`
