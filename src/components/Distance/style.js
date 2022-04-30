@@ -16,6 +16,12 @@ export const Space = styled(motion.div)`
     margin: 5px 0;
     font-size: 1rem;
   }
+
+  @media (min-width: 1120px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 export const DistanceText = styled(Text)`
