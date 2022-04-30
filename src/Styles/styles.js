@@ -19,7 +19,7 @@ import ImgTechnologyMobile from "../image/technology/background-technology-mobil
 
 export const Container = styled(motion.div)`
   width: 100%;
-  max-width: 1220px;
+  max-width: 1320px;
   margin: 0;
   display: flex;
   align-items: center;
@@ -34,7 +34,7 @@ export const Container = styled(motion.div)`
       align-items:center;
       justify-content:center;
       min-height:100vh;
-      gap:50px;
+      gap:200px;
       margin: 0;
       flex-direction: row;
       
@@ -230,48 +230,23 @@ export const Text = styled(motion.p)`
   }
 `;
 
-export const Button = styled(motion.button)`
-  width: 150px;
-  height: 150px;
-  background: var(--ff-color-light);
-  border-radius: 50%;
-  border: 0;
-  font-family: var(--ff-serif);
-  color: var(--body-color);
-  letter-spacing: 1px;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  transition: all 0.4s ease-in;
-  cursor: pointer;
-
-  &:hover {
-    box-shadow: 0 0 5px 5px rgba(223, 223, 223, 0.5);
-  }
-
-  @media (min-width: 768px) {
-    width: 250px;
-    height: 250px;
-    font-size: 2.5rem;
-  }
-  @media (min-width: 1200px) {
-    width: 280px;
-    height: 280px;
-  }
-`;
-
-export const TitleDestiny = styled(Title)`
+export const TitlePages = styled(Title)`
   display: flex;
-  color: var(--ff-color-light-opacity);
+  color: var(--ff-color-light);
   font-size: 1.3rem;
   gap: 2rem;
   text-align: center;
   justify-content: center;
   margin: 0 auto 20px auto;
+
+  ${(props) => props.crew && `margin-top:70px;`}
+
   span {
     font-family: var(--ff-sans-cond);
     display: inline-block;
-    color: var(--ff-color-light);
-    font-weight: bold;
+
+    color: var(--ff-color-light-opacity);
+    font-weight: 500;
     font-size: 1rem;
     font-size: 1.3rem;
   }
@@ -318,89 +293,6 @@ export const Box = styled(motion.div)`
   }
 `;
 
-export const PlanetImg = styled(motion.img)`
-  width: 100%;
-  max-width: 165px;
-  margin: 0 auto;
-  transition: all 0.7s ease-in;
-
-  @media (min-width: 768px) {
-    max-width: 300px;
-  }
-
-  @media (min-width: 1120px) {
-    max-width: 400px;
-    align-self: flex-end;
-    margin-top: 100px;
-  }
-`;
-
-export const PlanetList = styled(motion.ul)`
-  display: flex;
-  gap: 30px;
-  padding: 20px 20px 15px 20px;
-
-  @media (min-width: 1120px) {
-    width: 100%;
-    padding: 20px 0;
-  }
-`;
-
-export const PlanetItem = styled(motion.li)`
-  font-size: 1rem;
-  color: var(--ff-color-light-opacity);
-  font-family: var(--ff-sans-cond);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 300;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.3s ease;
-
-  &:after {
-    content: "";
-    display: block;
-    width: 0%;
-    height: 3px;
-    background: transparent;
-    transition: all 0.3s ease;
-    background-origin: center;
-    margin-top: 20px;
-  }
-
-  ${(props) =>
-    props.active &&
-    `
-    &:after {
-      width: 100%;
-      background: var(--ff-color-light-opacity);
-    }
-  `}
-
-  @media (min-width: 768px) {
-    font-size: 1.5rem;
-  }
-
-  @media (min-width: 1120px) {
-    max-width: 90%;
-  }
-`;
-export const TitlePlanetName = styled(motion.h3)`
-  color: var(--ff-color-light);
-  font-family: var(--ff-serif);
-  font-weight: 300;
-  font-size: 4rem;
-  text-transform: uppercase;
-
-  @media (min-width: 768px) {
-    font-size: 6rem;
-  }
-
-  @media (min-width: 1120px) {
-    width: 100%;
-    max-width: 100%;
-  }
-`;
 export const Separator = styled.div`
   width: 100%;
   height: 1px;
@@ -417,61 +309,13 @@ export const Separator = styled.div`
     max-width: 470px;
   }
 `;
-
-export const Distance = styled(Text)`
-  padding: 0px 10px;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  span {
-    display: block;
-    font-size: 1.5rem;
-    color: var(--ff-color-light);
-    font-weight: normal;
-    font-family: var(--ff-serif);
-  }
-
-  @media (min-width: 768px) {
-    padding: 0px 20px;
-  }
-`;
-
-export const TextDistance = styled(Text)`
-  line-height: 1.4;
-  height: 100px;
-  font-size: 0.875rem;
-
-  span {
-    color: var(--ff-color-light);
-  }
-
-  @media (min-width: 768px) {
-    font-size: 1.5rem;
-    height: 220px;
-    max-width: 500px;
-  }
-
-  @media (min-width: 1120px) {
-    font-size: 1.2rem;
-    max-width: 420px;
-    height: 120px;
-    padding: 0;
-    text-align: left;
-    margin: 0;
-  }
-`;
-
-export const Space = styled.div`
-  width: 100%;
+export const DisplayOrder = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 0;
-  margin: 10px 0;
 
-  p {
-    padding: 0;
-    margin: 10px 0;
-
-    font-size: 1rem;
+  @media (min-width: 768px) {
+    flex-direction: column-reverse;
   }
 `;

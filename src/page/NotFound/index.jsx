@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { Section } from "../Styles/styles";
-import { BoxFade } from "./../Styles/animates";
+import { Section } from "../../Styles/styles";
+import { BoxFade } from "../../Styles/animates";
 
 const NotFound = () => {
   useEffect(() => {

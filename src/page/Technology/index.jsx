@@ -1,5 +1,5 @@
-import { SectionTechnology } from "../Styles/styles";
-import { BoxFade } from "./../Styles/animates";
+import { SectionTechnology } from "../../Styles/styles";
+import { BoxFade } from "../../Styles/animates";
 
 const Technology = () => {
   return (

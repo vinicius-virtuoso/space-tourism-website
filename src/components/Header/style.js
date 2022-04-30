@@ -26,7 +26,7 @@ export const HeaderBox = styled(motion.header)`
     position: fixed;
     &:before {
       content: "";
-      width: 55%;
+      width: 50%;
       height: 100%;
 
       position: absolute;
@@ -40,7 +40,7 @@ export const HeaderBox = styled(motion.header)`
 
 export const ContainerHeader = styled.div`
   width: 100%;
-  max-width: 1240px;
+  max-width: 1420px;
 
   display: grid;
   grid-template-columns: auto 1fr 1fr;

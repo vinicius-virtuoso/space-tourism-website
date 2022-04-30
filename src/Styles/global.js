@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: var(--body-color);
     overflow: hidden; 
+    user-select: none;
   }
 
 `;
