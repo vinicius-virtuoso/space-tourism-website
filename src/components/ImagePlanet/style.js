@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const PlanetImg = styled(motion.img)`
   width: 100%;
-  max-width: 165px;
+  max-width: 145px;
   margin: 0 auto;
   transition: all 0.7s ease-in;
 
@@ -22,6 +22,9 @@ export const PlanetImg = styled(motion.img)`
       opacity: 1;
       transform: translateY(0px) scale(1);
     }
+  }
+  @media (min-width: 368px) {
+    max-width: 165px;
   }
 
   @media (min-width: 768px) {

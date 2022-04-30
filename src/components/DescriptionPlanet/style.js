@@ -38,19 +38,17 @@ export const TitlePlanetName = styled(motion.h3)`
 
 export const TextDistance = styled(Text)`
   line-height: 1.4;
-  height: 100px;
+  min-height: 120px;
   font-size: 0.875rem;
-
-  span {
-    color: var(--ff-color-light);
-  }
-
   opacity: 0;
   transform: translateY(30px);
   ${(props) =>
     props.animation &&
     `animation: showAnime 0.5s ${props.delay}s ease-in-out forwards;`}
 
+  span {
+    color: var(--ff-color-light);
+  }
   @keyframes showAnime {
     0% {
       opacity: 0;
