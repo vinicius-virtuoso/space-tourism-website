@@ -2,9 +2,22 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const ContainerInfo = styled(motion.div)`
-  padding: 0px 35px;
   min-height: 220px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    max-width: 80%;
+  }
+  @media (min-width: 1120px) {
+    grid-area: text;
+    text-align: left;
+    gap: 15px;
+
+    min-height: 450px;
+  }
 `;
 
 export const RoleText = styled(motion.h4)`
@@ -30,6 +43,13 @@ export const RoleText = styled(motion.h4)`
       opacity: 0.7;
       transform: translateY(0px);
     }
+  }
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 1120px) {
+    text-align: left;
   }
 `;
 
@@ -57,6 +77,13 @@ export const NameText = styled(motion.h2)`
       transform: translateY(0px);
     }
   }
+
+  @media (min-width: 768px) {
+    font-size: 2.7rem;
+  }
+  @media (min-width: 1120px) {
+    text-align: left;
+  }
 `;
 
 export const BioText = styled(motion.p)`
@@ -81,5 +108,12 @@ export const BioText = styled(motion.p)`
       opacity: 0.7;
       transform: translateY(0px);
     }
+  }
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 1120px) {
+    font-size: 1.2rem;
+    max-width: 500px;
   }
 `;

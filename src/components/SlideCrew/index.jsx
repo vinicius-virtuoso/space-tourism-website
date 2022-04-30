@@ -5,8 +5,9 @@ import hurley from "../../image/crew/image-douglas-hurley.png";
 import shuttleworth from "../../image/crew/image-mark-shuttleworth.png";
 import ansari from "../../image/crew/image-anousheh-ansari.png";
 import glover from "../../image/crew/image-victor-glover.png";
+import InfoCrew from "./../InfoCrew/index";
 
-const SlideCrew = ({ people, setPeople }) => {
+const SlideCrew = ({ people, setPeople, crew }) => {
   const [animation, setAnimation] = useState(false);
   const timer = 0;
   const [images, setImages] = useState([
@@ -72,6 +73,7 @@ const SlideCrew = ({ people, setPeople }) => {
           />
         ))}
       </Flex>
+      <InfoCrew people={people} crew={crew} />
     </ContainerSlide>
   );
 };

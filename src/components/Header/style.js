@@ -16,19 +16,19 @@ export const HeaderBox = styled(motion.header)`
   align-items: center;
   padding: 10px 20px;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
     height: 100px;
-    padding: 0;
-    top: 35px;
+    padding: 20px;
+    top: 0px;
   }
 
   @media (min-width: 1120px) {
     position: fixed;
+    top: 35px;
     &:before {
       content: "";
       width: 50%;
       height: 100%;
-
       position: absolute;
       z-index: -1;
       right: 0;
@@ -40,7 +40,7 @@ export const HeaderBox = styled(motion.header)`
 
 export const ContainerHeader = styled.div`
   width: 100%;
-  max-width: 1420px;
+  max-width: 1320px;
 
   display: grid;
   grid-template-columns: auto 1fr 1fr;
@@ -111,7 +111,7 @@ export const Nav = styled(motion.nav)`
     }
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
     opacity: 1;
     position: initial;
     height: 100px;
@@ -121,18 +121,17 @@ export const Nav = styled(motion.nav)`
     justify-content: center;
     overflow: visible;
     position: absolute;
-    width: 70%;
-    padding-left: 60px;
-    padding-right: 15px;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 20px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1120px) {
     width: 100%;
-    padding-left: 100px;
-    padding-right: 0px;
     position: initial;
     background: transparent;
     backdrop-filter: none;
+    padding: 0;
   }
 `;
 export const List = styled(motion.ul)`
@@ -144,15 +143,18 @@ export const List = styled(motion.ul)`
   justify-content: center;
   gap: 40px;
 
-  @media (min-width: 800px) {
+  @media (min-width: 768px) {
     width: 100%;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: flex-end;
     height: 100%;
   }
 
   @media (min-width: 1200px) {
     gap: 50px;
+  }
+  @media (min-width: 1120px) {
+    justify-content: flex-start;
   }
 `;
 
@@ -235,4 +237,20 @@ export const BtnMenu = styled(motion.div)`
   display: flex;
   width: auto;
   height: auto;
+`;
+
+export const Line = styled(motion.span)`
+  width: 95%;
+  height: 2px;
+  background: var(--ff-color-light-opacity);
+  opacity: 0.3;
+  border-radius: 2px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+  @media (min-width: 1120px) {
+    display: block;
+    margin-left: 15px;
+  }
 `;

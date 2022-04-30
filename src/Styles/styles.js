@@ -19,12 +19,22 @@ import ImgTechnologyMobile from "../image/technology/background-technology-mobil
 
 export const Container = styled(motion.div)`
   width: 100%;
+  min-height: 100vh;
   max-width: 1320px;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media (min-width: 768px) {
+    ${(props) =>
+      props.crew &&
+      `
+      justify-content: flex-end;
+    
+    `}
+  }
 
   @media (min-width: 1124px) {
     ${(props) =>
@@ -38,6 +48,12 @@ export const Container = styled(motion.div)`
       margin: 0;
       flex-direction: row;
       
+    `}
+    ${(props) =>
+      props.crew &&
+      `
+      justify-content: center;
+      position:relative;
     `}
   }
 `;
@@ -151,14 +167,6 @@ export const SectionTechnology = styled(Section)`
   }
 `;
 
-export const Line = styled(motion.span)`
-  width: 100%;
-  height: 2px;
-  background: var(--ff-color-light-opacity);
-  opacity: 0.3;
-  border-radius: 2px;
-`;
-
 export const Title = styled(motion.h1)`
   font-family: var(--ff-sans-cond);
   font-weight: 300;
@@ -254,11 +262,13 @@ export const TitlePages = styled(Title)`
   @media (min-width: 768px) {
     display: block;
     width: 100%;
-    max-width: 80%;
-    margin: 50px auto;
+    max-width: 90%;
+    margin: 0px 0px 80px 0px;
     text-align: left;
     text-align: flex-start;
     justify-content: flex-start;
+    position: absolute;
+    top: 145px;
 
     font-size: 1.9rem;
     span {
@@ -270,6 +280,8 @@ export const TitlePages = styled(Title)`
     font-size: 1.6rem;
     letter-spacing: 3px;
     gap: 15px;
+    position: initial;
+    margin-left: 0px;
 
     span {
       font-size: 1.6rem;
@@ -317,5 +329,10 @@ export const DisplayOrder = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: column-reverse;
+  }
+  @media (min-width: 1120px) {
+    width: 100%;
+    display: flex;
+    align-items: center;
   }
 `;

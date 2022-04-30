@@ -49,6 +49,7 @@ export const TextDistance = styled(Text)`
   span {
     color: var(--ff-color-light);
   }
+
   @keyframes showAnime {
     0% {
       opacity: 0;

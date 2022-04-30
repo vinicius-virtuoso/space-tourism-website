@@ -8,6 +8,7 @@ import {
   Item,
   LinkItem,
   ContainerHeader,
+  Line,
 } from "./style";
 import imgLogo from "../../image/icons/logo.svg";
 import iconBars from "../../image/icons/icon-bars.svg";
@@ -15,7 +16,6 @@ import iconClose from "../../image/icons/icon-close.svg";
 
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { Line } from "../../Styles/styles";
 
 const Header = () => {
   const [mobile, setMobile] = useState(true);

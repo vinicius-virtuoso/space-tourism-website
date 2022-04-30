@@ -4,7 +4,6 @@ import { RoleText, NameText, ContainerInfo, BioText } from "./style";
 const InfoCrew = ({ crew, people }) => {
   const [character, setCharacter] = useState(crew[0]);
   const [animation, setAnimation] = useState(false);
-
   const timer = 0;
 
   useEffect(() => {
